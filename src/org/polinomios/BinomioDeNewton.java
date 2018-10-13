@@ -5,6 +5,12 @@ public class BinomioDeNewton {
 	public double b;
 	public double grado;
 	
+	/**
+	 * 
+	 * @param a Es el primer termino del binomio (aX + b)^n
+	 * @param b Es el segundo termino del binomio (aX + b)^n
+	 * @param grado Es el exponente al cual está elevado el binomio.
+	 */
 	public BinomioDeNewton(double a, double b, double grado) {
 		this.a = a;
 		this.b = b;
@@ -55,6 +61,14 @@ public class BinomioDeNewton {
 		for(; exponente > 1; exponente--)
 			resultado *= base;
 		return resultado;
+	}
+	
+	public double potenciaRecursiva(double base, double exponente) {
+		if(exponente == 0)
+			return 1;
+		if(exponente == 1)
+			return base;
+		return base * potenciaRecursiva(base, exponente-1);
 	}
 	
 	private double factorial(double n) {

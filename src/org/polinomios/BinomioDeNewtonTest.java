@@ -30,10 +30,16 @@ class BinomioDeNewtonTest {
 		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientes(), 0);
 	}
 	
+	@Test
 	void testCoeficientes2() {
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		double[] coeficientes = new double[] {32, 560, 3920, 13720, 24010, 16807};
 		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientes(), 0);
+	}
+	
+	@Test
+	void testPotenciaRecursiva() {
+		BinomioDeNewton bn = new BinomioDeNewton(7, 2, 5);
 	}
 
 }
