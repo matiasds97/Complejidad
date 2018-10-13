@@ -52,7 +52,7 @@ public class PolinomioTest {
 	
 	@Test
 	public void testHorner() { //Falta testear
-		int grado =2;
+		int grado = 2;
 		double pol[] = {1,1,2};
 		Polinomio cuadrado = new Polinomio(grado,pol);
 	}

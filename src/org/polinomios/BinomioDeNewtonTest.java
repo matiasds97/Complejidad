@@ -31,6 +31,13 @@ class BinomioDeNewtonTest {
 	}
 	
 	@Test
+	void testCoeficienteRecursivo() {
+		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
+		double[] coeficientes = new double[] {32, 560, 3920, 13720, 24010, 16807};
+		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientesRecursivo(), 0);
+	}
+	
+	@Test
 	void testPotencia() {
 		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
 		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
