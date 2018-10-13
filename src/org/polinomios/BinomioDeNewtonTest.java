@@ -14,14 +14,7 @@ class BinomioDeNewtonTest {
 	void test2() {
 		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
 		Assert.assertEquals(4, binomio.obtenerTerminoKSinPow(2), 0);
-	}
-	
-	@Test
-	void testPotencia() {
-		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
-		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
-	}
-	
+	}	
 	
 	@Test
 	void testCoeficientes() {
@@ -38,8 +31,15 @@ class BinomioDeNewtonTest {
 	}
 	
 	@Test
+	void testPotencia() {
+		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
+		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
+	}
+	
+	@Test
 	void testPotenciaRecursiva() {
 		BinomioDeNewton bn = new BinomioDeNewton(7, 2, 5);
+		Assert.assertEquals(1048576, bn.potenciaRecursiva(4, 10),0);
 	}
 
 }
