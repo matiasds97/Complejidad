@@ -10,7 +10,7 @@ class BinomioDeNewtonTest {
 		long startTime;
 		long finishTime;
 		long totalTime;
-		BinomioDeNewton binomio = new BinomioDeNewton(1, 1, 170);
+		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
 		Assert.assertEquals(14364.99, binomio.obtenerTerminoK(2), 0.1);
 		finishTime = System.nanoTime();
@@ -23,7 +23,7 @@ class BinomioDeNewtonTest {
 		long startTime;
 		long finishTime;
 		long totalTime;
-		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
+		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
 		Assert.assertEquals(4, binomio.obtenerTerminoKSinPow(2), 0);
 		finishTime = System.nanoTime();
@@ -37,7 +37,7 @@ class BinomioDeNewtonTest {
 		long startTime;
 		long finishTime;
 		long totalTime;
-		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
+		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
 		Assert.assertEquals(4, binomio.obtenerTerminoKRecursivo(2), 0);
 		finishTime = System.nanoTime();
@@ -60,7 +60,7 @@ class BinomioDeNewtonTest {
 		System.out.println("obtenerTodosLosCoeficientes:\t" + totalTime + "ns");
 	}
 	
-	@Test
+	//@Test
 	void testCoeficientesSinPow() {
 		long startTime;
 		long finishTime;
@@ -75,7 +75,7 @@ class BinomioDeNewtonTest {
 		//Al ser un binomio de mayor grado tarda más tiempo en realizar el cálculo.
 	}
 	
-	//@Test
+	@Test
 	void testCoeficienteRecursivo() {
 		long startTime;
 		long finishTime;
@@ -91,7 +91,7 @@ class BinomioDeNewtonTest {
 	
 	//@Test
 	void testPotencia() {
-		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
+		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
 	}
 	
