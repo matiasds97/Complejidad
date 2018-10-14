@@ -1,61 +1,67 @@
 package org.polinomios;
+
 import org.junit.Test;
 import org.junit.Assert;
+
 public class PolinomioTest {
-	
+
+	long ini;
+
 	@Test
 	public void testMSucesivas() {
-		int grado =2;
-		double pol[] = {1,1,2};
-		
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		
-		Assert.assertEquals(4, cuadrado.evaluarMSucesivas(1),0.0);
-	}
-	
-	@Test
-	public void testRecursiva() {
-		int grado = 2;
-		double pol[] = {1, 1, 2};
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		
-		Assert.assertEquals(4, cuadrado.evaluarRecursiva(1), 0);
-	}
-	
-	@Test 
-	public void testDinamica() {
-		int grado = 2;
-		double pol[] = {1, 1, 2};
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		Assert.assertEquals(4, cuadrado.evaluarDinamica(1), 0);
+		int grado = 4;
+		double pol[] = { 5, 2, 3, 4, 2};
+		Polinomio polinomio = new Polinomio(grado, pol);
+		Assert.assertEquals(16, polinomio.evaluarMSucesivas(1), 0.0);
 	}
 
-	
 	@Test
-	public void testRecursiva2() {
-		int grado =2;
-		double pol[] = {1, 1, 2};
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		
-		Assert.assertEquals(4, cuadrado.evaluarHorner(1), 0);
-		
-		Assert.assertEquals(4, cuadrado.evaluarRecursivaPar(1), 0);
+	public void testRecursiva() {
+		int grado = 4;
+		double pol[] = { 5, 2, 3, 4, 2};
+		Polinomio polinomio = new Polinomio(grado, pol);
+
+		Assert.assertEquals(16, polinomio.evaluarRecursiva(1), 0);
 	}
 	
 	@Test
-	public void testPow() {
-		int grado = 2;
-		double pol[] = {1, 1, 2};
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		Assert.assertEquals(4, cuadrado.evaluarPow(1), 0);
+	public void testRecursivaPar() {
+		int grado = 4;
+		double pol[] = { 5, 2, 3, 4, 2 };
+		Polinomio polinomio = new Polinomio(grado, pol);
+		Assert.assertEquals(16, polinomio.evaluarRecursivaPar(1), 0);
+	}
+
+	@Test
+	public void testDinamica() {
+		int grado = 4;
+		double pol[] = {5, 2, 3, 4, 2};
+		Polinomio polinomio = new Polinomio(grado, pol);
+		Assert.assertEquals(16, polinomio.evaluarProgDinamica(1), 0);
 	}
 	
 	@Test
-	public void testHorner() {
-		int grado = 2;
-		double pol[] = {1,1,2};
-		Polinomio cuadrado = new Polinomio(grado,pol);
-		Assert.assertEquals(8, cuadrado.evaluarHorner(2),0);
+		public void testDinamicaMejorada() {
+			int grado = 4;
+			double pol[] = {5, 2, 3, 4, 2};
+			Polinomio polinomio = new Polinomio(grado, pol);
+			Assert.assertEquals(16, polinomio.evaluarMejorada(1), 0);
+		}
+
+	@Test
+	public void testEvaluarPow() {
+		int grado = 4;
+		double pol[] = {5, 2, 3, 4, 2};
+		Polinomio polinomio = new Polinomio(grado, pol);
+		Assert.assertEquals(16, polinomio.evaluarPow(1), 0);
 	}
-	
+
+	@Test
+	public void testEvaluarHorner() {
+		int grado = 4;
+		double pol[] = {5, 2, 3, 4, 2};
+		Polinomio polinomio = new Polinomio(grado, pol);
+		Assert.assertEquals(118, polinomio.evaluarHorner(2), 0);
+	}
+
 }
