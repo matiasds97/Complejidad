@@ -60,7 +60,6 @@ public class BinomioDeNewton {
 		long a = System.nanoTime();
 		for(int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado-i] = obtenerTerminoK(i);
-		System.out.println("ZIZO: " + (System.nanoTime() - a));
 		return coeficientes;
 	}
 	
@@ -69,7 +68,6 @@ public class BinomioDeNewton {
 		long a = System.nanoTime();
 		for(int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado-i] = obtenerTerminoKSinPow(i);
-		System.out.println("ZIZO: " + (System.nanoTime() - a));
 		return coeficientes;
 	}
 	
@@ -123,6 +121,5 @@ public class BinomioDeNewton {
 		if(n==1||n==0) return 1;
 		else return n*factorial(n-1);
 	}
-	
 
 }
