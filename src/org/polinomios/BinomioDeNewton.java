@@ -65,7 +65,7 @@ public class BinomioDeNewton {
 		return coeficientes;
 	}
 
-	public double[] obtenerCoeficientesSinPow() { // Solo para grados naturales.
+	public double[] obtenerCoeficientesSinPow() {
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado - i] = obtenerCoeficienteKSinPow(i);
