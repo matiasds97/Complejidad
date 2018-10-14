@@ -26,7 +26,6 @@ public class Polinomio {
 		}
 		resultadoFinal += coeficientes[grado];
 		return resultadoFinal;
-
 	}
 
 	/**
