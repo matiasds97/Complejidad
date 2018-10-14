@@ -13,6 +13,7 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando potencias sucesivas.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
@@ -30,6 +31,7 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando potencias recursivas.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
@@ -48,9 +50,10 @@ public class Polinomio {
 			return 1;
 		return base * potenciaRec(base, exp - 1);
 	}
-	
+
 	/**
 	 * Calcula el valor de P(x) empleando potencias recursivas pares.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
@@ -62,7 +65,7 @@ public class Polinomio {
 		resultadoFinal += coeficientes[i];
 		return resultadoFinal;
 	}
-	
+
 	double potenciaRec2(double base, int exp) { // Complejidad computacional O(log[n])
 		if (exp == 0)
 			return 1;
@@ -74,6 +77,7 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando programación dinámica.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
@@ -89,6 +93,7 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando programación dinámica.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
@@ -104,10 +109,11 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando potencias con Math.pow().
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
-	double evaluarPow(double x) { //Math.Pow() no realiza multiplicaciones sucesivas. Es O(n).
+	double evaluarPow(double x) { // Math.Pow() no realiza multiplicaciones sucesivas. Es O(n).
 		double resultadoFinal = 0;
 		for (int i = 0; i < grado; i++)
 			resultadoFinal += Math.pow(x, grado - i) * coeficientes[i];
@@ -117,10 +123,11 @@ public class Polinomio {
 
 	/**
 	 * Calcula el valor de P(x) empleando el algoritmo de Horner.
+	 * 
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
-	double evaluarHorner(double x) { //O(n)
+	double evaluarHorner(double x) { // O(n)
 		double resultadoFinal = 0;
 		for (int i = 0; i <= grado; i++)
 			resultadoFinal = resultadoFinal * x + coeficientes[i];

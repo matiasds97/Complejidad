@@ -23,7 +23,7 @@ public class BinomioDeNewton {
 	 * @param k Es el grado del término cuyo coeficiente se desea obtener.
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
-	public double obtenerCoeficienteK(int k) { //O(1)
+	public double obtenerCoeficienteK(int k) { // O(1)
 		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * Math.pow(this.a, this.grado - k)
 				* Math.pow(this.b, k);
 	}
