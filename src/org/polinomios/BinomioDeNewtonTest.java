@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 class BinomioDeNewtonTest {
+	
+	//PARA CORRER LOS TESTS EJECUTAR UN TEST A LA VEZ SOLAMENTE !!
 
 	@Test
 	void obtenerCoeficienteK() {
