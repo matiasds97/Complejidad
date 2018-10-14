@@ -41,8 +41,12 @@ public class BinomioDeNewton {
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
 	public double obtenerCoeficienteKSinPow(int k) {
-		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * potencia(this.a, this.grado - k)
+		double x;
+		long ini = System.nanoTime();
+		x= factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * potencia(this.a, this.grado - k)
 				* potencia(this.b, k);
+		System.out.println("Obtener K Sin Pow: " + (System.nanoTime() - ini) + " ns");
+		return x;
 	}
 
 	/**
@@ -54,8 +58,12 @@ public class BinomioDeNewton {
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
 	public double obtenerCoeficienteKRecursivo(int k) {
-		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k))
+		double x;
+		long ini = System.nanoTime();
+		x= factorial(this.grado) / (factorial(k) * factorial(this.grado - k))
 				* potenciaRecursiva(this.a, this.grado - k) * potenciaRecursiva(this.b, k);
+		System.out.println("Obtener K: " + (System.nanoTime() - ini) + " ns");
+		return x;
 	}
 
 	/**
@@ -63,16 +71,20 @@ public class BinomioDeNewton {
 	 *         obtenido luego de aplicar el teorema del binomio.
 	 */
 	public double[] obtenerCoeficientes() { // Solo para grados naturales.
+		long ini = System.nanoTime();
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado - i] = obtenerCoeficienteK(i);
+		System.out.println("Obtener Coeficientes: " + (System.nanoTime() - ini) + " ns");
 		return coeficientes;
 	}
 
 	public double[] obtenerCoeficientesSinPow() { // Solo para grados naturales.
+		long ini = System.nanoTime();
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado - i] = obtenerCoeficienteKSinPow(i);
+		System.out.println("Obtener Coeficientes sin Pow: " + (System.nanoTime() - ini) + " ns");
 		return coeficientes;
 	}
 
@@ -82,9 +94,11 @@ public class BinomioDeNewton {
 	 *         recursiva.
 	 */
 	public double[] obtenerCoeficientesRecursivo() {
+		long ini = System.nanoTime();
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado - i] = obtenerCoeficienteKRecursivo(i);
+		System.out.println("Obtener Coeficientes Recursivos: " + (System.nanoTime() - ini) + " ns");
 		return coeficientes;
 	}
 
