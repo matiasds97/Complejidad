@@ -24,8 +24,12 @@ public class BinomioDeNewton {
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
 	public double obtenerCoeficienteK(int k) { //O(1)
-		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * Math.pow(this.a, this.grado - k)
+		double x;
+		long ini = System.nanoTime();
+		x = factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * Math.pow(this.a, this.grado - k)
 				* Math.pow(this.b, k);
+		System.out.println("Obtener K: " + (System.nanoTime() - ini) + " ns");
+		return x;
 	}
 
 	/**
