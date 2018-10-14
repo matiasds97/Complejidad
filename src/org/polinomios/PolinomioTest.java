@@ -51,10 +51,11 @@ public class PolinomioTest {
 	}
 	
 	@Test
-	public void testHorner() { //Falta testear
+	public void testHorner() {
 		int grado = 2;
 		double pol[] = {1,1,2};
 		Polinomio cuadrado = new Polinomio(grado,pol);
+		Assert.assertEquals(8, cuadrado.evaluarHorner(2),0);
 	}
 	
 }
