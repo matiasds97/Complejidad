@@ -5,48 +5,48 @@ import org.junit.jupiter.api.Test;
 class BinomioDeNewtonTest {
 	
 
-	//@Test
+	@Test
 	void obtenerCoeficienteK() {
 		long startTime;
 		long finishTime;
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
-		Assert.assertEquals(14364.99, binomio.obtenerTerminoK(2), 0.1);
+		Assert.assertEquals(13720, binomio.obtenerTerminoK(2), 0.1);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerCoeficienteK:\t\t" + totalTime + "ms");
 	}
 	
-	//@Test
+	@Test
 	void obtenerCoeficienteKSinPow() { //No se emplea método Math.pow();
 		long startTime;
 		long finishTime;
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
-		Assert.assertEquals(4, binomio.obtenerTerminoKSinPow(2), 0);
+		Assert.assertEquals(13720, binomio.obtenerTerminoKSinPow(2), 0);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerCoeficienteKSinPow:\t" + totalTime + "ns");
 		//Sin emplear el método Pow, el rendimiento mejora notablemente.
 	}
-	
-	//@Test 
+
+	@Test 
 	void obtenerCoeficienteKRecursivo() {
 		long startTime;
 		long finishTime;
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
-		Assert.assertEquals(4, binomio.obtenerTerminoKRecursivo(2), 0);
+		Assert.assertEquals(13720, binomio.obtenerTerminoKRecursivo(2), 0);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerCoeficienteKSinPow:\t" + totalTime + "ns");
 		//Tarda menos que con pow pero mas que con la potencia directa
 	}
 	
-	//@Test
+	@Test
 	void obtenerTodosLosCoeficientes() {
 		long startTime;
 		long finishTime;
@@ -60,7 +60,7 @@ class BinomioDeNewtonTest {
 		System.out.println("obtenerTodosLosCoeficientes:\t" + totalTime + "ns");
 	}
 	
-	//@Test
+	@Test
 	void testCoeficientesSinPow() {
 		long startTime;
 		long finishTime;
@@ -89,13 +89,13 @@ class BinomioDeNewtonTest {
 		System.out.println("obtenerTodosLosCoeficientesRecursivo:\t" + totalTime + "ns");
 	}
 	
-	//@Test
+	@Test
 	void testPotencia() {
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
 	}
 	
-	//@Test
+	@Test
 	void testPotenciaRecursiva() {
 		BinomioDeNewton bn = new BinomioDeNewton(7, 2, 5);
 		Assert.assertEquals(1048576, bn.potenciaRecursiva(4, 10),0);
