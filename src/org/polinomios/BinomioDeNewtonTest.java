@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class BinomioDeNewtonTest {
 	
 
-	@Test
+	//@Test
 	void obtenerCoeficienteK() {
 		long startTime;
 		long finishTime;
@@ -18,7 +18,7 @@ class BinomioDeNewtonTest {
 		System.out.println("obtenerCoeficienteK:\t\t" + totalTime + "ms");
 	}
 	
-	@Test
+	//@Test
 	void obtenerCoeficienteKSinPow() { //No se emplea método Math.pow();
 		long startTime;
 		long finishTime;
@@ -32,7 +32,7 @@ class BinomioDeNewtonTest {
 		//Sin emplear el método Pow, el rendimiento mejora notablemente.
 	}
 	
-	@Test 
+	//@Test 
 	void obtenerCoeficienteKRecursivo() {
 		long startTime;
 		long finishTime;
@@ -46,7 +46,7 @@ class BinomioDeNewtonTest {
 		//Tarda menos que con pow pero mas que con la potencia directa
 	}
 	
-	@Test
+	//@Test
 	void obtenerTodosLosCoeficientes() {
 		long startTime;
 		long finishTime;
@@ -61,21 +61,21 @@ class BinomioDeNewtonTest {
 	}
 	
 	@Test
-	void testCoeficientes2() {
+	void testCoeficientesSinPow() {
 		long startTime;
 		long finishTime;
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		double[] coeficientes = new double[] {32, 560, 3920, 13720, 24010, 16807};
 		startTime = System.nanoTime();
-		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientes(), 0);
+		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientesSinPow(), 0);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerTodosLosCoeficientes2:\t" + totalTime + "ns");
 		//Al ser un binomio de mayor grado tarda más tiempo en realizar el cálculo.
 	}
 	
-	@Test
+	//@Test
 	void testCoeficienteRecursivo() {
 		long startTime;
 		long finishTime;
@@ -89,20 +89,16 @@ class BinomioDeNewtonTest {
 		System.out.println("obtenerTodosLosCoeficientesRecursivo:\t" + totalTime + "ns");
 	}
 	
-	@Test
+	//@Test
 	void testPotencia() {
 		BinomioDeNewton binomio = new BinomioDeNewton(3, 2, 2);
 		Assert.assertEquals(1048576, binomio.potencia(4, 10), 0);
 	}
 	
-	@Test
+	//@Test
 	void testPotenciaRecursiva() {
 		BinomioDeNewton bn = new BinomioDeNewton(7, 2, 5);
 		Assert.assertEquals(1048576, bn.potenciaRecursiva(4, 10),0);
-	}
-	
-	public static void main(String[] args) {
-		System.out.println("NO SE PONE BELLACA");
 	}
 
 }

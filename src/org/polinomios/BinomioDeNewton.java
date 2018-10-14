@@ -57,8 +57,19 @@ public class BinomioDeNewton {
 	 */
 	public double[] obtenerCoeficientes() {		//Solo para grados naturales.
 		double[] coeficientes = new double[(int) (this.grado+1)];
+		long a = System.nanoTime();
 		for(int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado-i] = obtenerTerminoK(i);
+		System.out.println("ZIZO: " + (System.nanoTime() - a));
+		return coeficientes;
+	}
+	
+	public double[] obtenerCoeficientesSinPow() {		//Solo para grados naturales.
+		double[] coeficientes = new double[(int) (this.grado+1)];
+		long a = System.nanoTime();
+		for(int i = (int) this.grado; i >= 0; i--)
+			coeficientes[(int) this.grado-i] = obtenerTerminoKSinPow(i);
+		System.out.println("ZIZO: " + (System.nanoTime() - a));
 		return coeficientes;
 	}
 	
