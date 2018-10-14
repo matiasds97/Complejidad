@@ -7,15 +7,8 @@ class BinomioDeNewtonTest {
 
 	@Test
 	void obtenerCoeficienteK() {
-		long startTime;
-		long finishTime;
-		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
-		startTime = System.nanoTime();
-		Assert.assertEquals(13720, binomio.obtenerTerminoK(2), 0.1);
-		finishTime = System.nanoTime();
-		totalTime = finishTime - startTime;
-		System.out.println("obtenerCoeficienteK:\t\t" + totalTime + "ms");
+		Assert.assertEquals(13720, binomio.obtenerCoeficienteK(2), 0.1);
 	}
 
 	@Test
@@ -25,7 +18,7 @@ class BinomioDeNewtonTest {
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
-		Assert.assertEquals(13720, binomio.obtenerTerminoKSinPow(2), 0);
+		Assert.assertEquals(13720, binomio.obtenerCoeficienteKSinPow(2), 0);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerCoeficienteKSinPow:\t" + totalTime + "ns");
@@ -39,7 +32,7 @@ class BinomioDeNewtonTest {
 		long totalTime;
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		startTime = System.nanoTime();
-		Assert.assertEquals(13720, binomio.obtenerTerminoKRecursivo(2), 0);
+		Assert.assertEquals(13720, binomio.obtenerCoeficienteKRecursivo(2), 0);
 		finishTime = System.nanoTime();
 		totalTime = finishTime - startTime;
 		System.out.println("obtenerCoeficienteKSinPow:\t" + totalTime + "ns");

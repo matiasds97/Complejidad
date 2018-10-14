@@ -23,7 +23,7 @@ public class BinomioDeNewton {
 	 * @param k Es el grado del término cuyo coeficiente se desea obtener.
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
-	public double obtenerTerminoK(int k) {
+	public double obtenerCoeficienteK(int k) { //O(1)
 		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * Math.pow(this.a, this.grado - k)
 				* Math.pow(this.b, k);
 	}
@@ -36,7 +36,7 @@ public class BinomioDeNewton {
 	 * @param k Es el grado del término cuyo coeficiente se desea obtener.
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
-	public double obtenerTerminoKSinPow(int k) {
+	public double obtenerCoeficienteKSinPow(int k) {
 		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * potencia(this.a, this.grado - k)
 				* potencia(this.b, k);
 	}
@@ -49,7 +49,7 @@ public class BinomioDeNewton {
 	 * @param k Es el grado del término cuyo coeficiente se desea obtener.
 	 * @return Devuelve el valor del coeficiente del término de grado K.
 	 */
-	public double obtenerTerminoKRecursivo(int k) {
+	public double obtenerCoeficienteKRecursivo(int k) {
 		return factorial(this.grado) / (factorial(k) * factorial(this.grado - k))
 				* potenciaRecursiva(this.a, this.grado - k) * potenciaRecursiva(this.b, k);
 	}
@@ -61,14 +61,14 @@ public class BinomioDeNewton {
 	public double[] obtenerCoeficientes() { // Solo para grados naturales.
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
-			coeficientes[(int) this.grado - i] = obtenerTerminoK(i);
+			coeficientes[(int) this.grado - i] = obtenerCoeficienteK(i);
 		return coeficientes;
 	}
 
 	public double[] obtenerCoeficientesSinPow() { // Solo para grados naturales.
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
-			coeficientes[(int) this.grado - i] = obtenerTerminoKSinPow(i);
+			coeficientes[(int) this.grado - i] = obtenerCoeficienteKSinPow(i);
 		return coeficientes;
 	}
 
@@ -80,7 +80,7 @@ public class BinomioDeNewton {
 	public double[] obtenerCoeficientesRecursivo() {
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
-			coeficientes[(int) this.grado - i] = obtenerTerminoKRecursivo(i);
+			coeficientes[(int) this.grado - i] = obtenerCoeficienteKRecursivo(i);
 		return coeficientes;
 	}
 
