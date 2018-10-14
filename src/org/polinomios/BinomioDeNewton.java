@@ -58,7 +58,7 @@ public class BinomioDeNewton {
 	 * @return Devuelve un array que contiene los coeficientes del polinomio
 	 *         obtenido luego de aplicar el teorema del binomio.
 	 */
-	public double[] obtenerCoeficientes() { // Solo para grados naturales.
+	public double[] obtenerCoeficientes() { 
 		double[] coeficientes = new double[(int) (this.grado + 1)];
 		for (int i = (int) this.grado; i >= 0; i--)
 			coeficientes[(int) this.grado - i] = obtenerCoeficienteK(i);
