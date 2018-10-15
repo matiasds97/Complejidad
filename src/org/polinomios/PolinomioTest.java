@@ -17,11 +17,11 @@ public class PolinomioTest {
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarMSucesivas(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion MSucesivas (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion MSucesivas (ns) = " + (tFin - tIni));
 	}
 
 	//@Test
@@ -30,11 +30,11 @@ public class PolinomioTest {
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarRecursiva(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion Recursiva (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion Recursiva (ns) = " + (tFin - tIni));
 	}
 
 	//@Test
@@ -43,11 +43,11 @@ public class PolinomioTest {
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarRecursivaPar(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion RecursivaPar (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion RecursivaPar (ns) = " + (tFin - tIni));
 	}
 
 	//@Test
@@ -56,24 +56,24 @@ public class PolinomioTest {
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarProgDinamica(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion ProgDinamica (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion ProgDinamica (ns) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testDinamicaMejorada() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarMejorada(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion Mejorada (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion Mejorada (ns) = " + (tFin - tIni));
 	}
 
 	//@Test
@@ -82,24 +82,24 @@ public class PolinomioTest {
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarPow(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion Pow (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion Pow (ns) = " + (tFin - tIni));
 	}
 
-	//@Test
+	@Test
 	public void testEvaluarHorner() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
 		Polinomio polinomio = new Polinomio(grado, pol);
 		
-		long tIni = System.currentTimeMillis();
+		long tIni = System.nanoTime();
 		Assert.assertEquals(-26551, polinomio.evaluarHorner(1), 0.0);
-		long tFin = System.currentTimeMillis();
+		long tFin = System.nanoTime();
 		
-		System.out.println("Tiempo de ejecucion Horner (ms) = " + (tFin - tIni));
+		System.out.println("Tiempo de ejecucion Horner (ns) = " + (tFin - tIni));
 	}
 
 }
