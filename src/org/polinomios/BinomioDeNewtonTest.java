@@ -7,7 +7,7 @@ class BinomioDeNewtonTest {
 	
 	//PARA CORRER LOS TESTS EJECUTAR UN TEST A LA VEZ SOLAMENTE !!
 
-	@Test
+	//@Test
 	void obtenerCoeficienteK() {
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		Assert.assertEquals(13720, binomio.obtenerCoeficienteK(2), 0.1);
@@ -43,7 +43,7 @@ class BinomioDeNewtonTest {
 		// Al ser un binomio de mayor grado tarda más tiempo en realizar el cálculo.
 	}
 
-	//@Test
+	@Test
 	void testCoeficienteRecursivo() {
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		double[] coeficientes = new double[] { 32, 560, 3920, 13720, 24010, 16807 };
