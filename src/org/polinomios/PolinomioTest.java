@@ -24,7 +24,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion MSucesivas (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testRecursiva() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
@@ -63,7 +63,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion ProgDinamica (ms) = " + (tFin - tIni));
 	}
 
-	//@Test
+	@Test
 	public void testDinamicaMejorada() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
