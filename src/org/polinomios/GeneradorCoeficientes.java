@@ -13,7 +13,9 @@ public class GeneradorCoeficientes {
 		PrintWriter pw = new PrintWriter(fw);
 		Random r = new Random();
 		
-		for(int i = 0; i < 1000; i++) {
+		pw.println(10000); //Imprime la cantidad de coeficientes que hay
+		
+		for(int i = 0; i < 10000; i++) {
 			pw.println(r.nextInt(1001) - 500);
 		}
 		

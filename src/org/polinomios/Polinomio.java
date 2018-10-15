@@ -20,8 +20,11 @@ public class Polinomio {
 	double evaluarMSucesivas(double x) { // Complejidad computacional O(n^2)
 		double resultadoFinal = 0, potencia = 1;
 		for (int i = 0; i < grado; i++) {
-			for (int j = 0; j < i; j++)
+			
+			for (int j = 0; j < i; j++) {
 				potencia = x * x;
+				//System.out.println(potencia);
+			}
 			resultadoFinal += potencia * coeficientes[i];
 		}
 		resultadoFinal += coeficientes[grado];
