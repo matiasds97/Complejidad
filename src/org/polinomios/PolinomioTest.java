@@ -10,7 +10,7 @@ public class PolinomioTest {
 
 	long ini;
 
-	@Test
+	//@Test
 	public void testMSucesivas() throws FileNotFoundException {
 		
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
@@ -37,7 +37,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion Recursiva (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testRecursivaPar() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
@@ -50,7 +50,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion RecursivaPar (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testDinamica() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
@@ -63,7 +63,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion ProgDinamica (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testDinamicaMejorada() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
@@ -76,7 +76,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion Mejorada (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testEvaluarPow() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;
@@ -89,7 +89,7 @@ public class PolinomioTest {
 		System.out.println("Tiempo de ejecucion Pow (ms) = " + (tFin - tIni));
 	}
 
-	@Test
+	//@Test
 	public void testEvaluarHorner() throws FileNotFoundException{
 		double[] pol = LeerCoeficientes.leerArchCoeficientes();
 		int grado = pol.length - 1;

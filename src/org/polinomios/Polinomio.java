@@ -83,14 +83,17 @@ public class Polinomio {
 	 * @param x Valor a evaluar en x.
 	 * @return Valor del polinomio evaluado en x.
 	 */
-	double evaluarProgDinamica(double x) { // Complejidad computacional O(n)
-		double resultadoFinal = 0, potencia = 1;
-		for (int i = grado - 1; i >= 0; i--) {
-			potencia *= x;
-			resultadoFinal += potencia * coeficientes[i];
-		}
-		resultadoFinal += coeficientes[grado];
-		return resultadoFinal;
+	double evaluarProgDinamica(double x) {
+		double resultado = 0;
+		double[] potencias = new double[(int) this.grado + 1];
+		
+		for(int i = 0; i <= this.grado; i++)
+			potencias[i] = potenciaRec(x, this.grado - i);
+		
+		for(int i = 0; i <= this.grado; i++)
+			resultado += potencias[i] * this.coeficientes[i];
+		
+		return resultado;
 	}
 
 	/**
