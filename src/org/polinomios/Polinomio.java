@@ -22,8 +22,11 @@ public class Polinomio {
 	double evaluarMSucesivas(double x) { // Complejidad computacional O(n^2)
 		double resultadoFinal = 0, potencia = 1;
 		for (int i = 0; i < grado; i++) {
-			for (int j = 0; j < i; j++)
+			
+			for (int j = 0; j < i; j++) {
 				potencia = x * x;
+				//System.out.println(potencia);
+			}
 			resultadoFinal += potencia * coeficientes[i];
 		}
 		resultadoFinal += coeficientes[grado];
@@ -83,13 +86,15 @@ public class Polinomio {
 	 * @return Valor del polinomio evaluado en x.
 	 */
 	double evaluarProgDinamica(double x) { // Complejidad computacional O(n)
-		double resultadoFinal = 0, potencia = 1;
-		for (int i = grado - 1; i >= 0; i--) {
-			potencia *= x;
-			resultadoFinal += potencia * coeficientes[i];
+		double resultado = 0;
+		double[] potencias = new double[(int) this.grado + 1];
+		
+		for(int i = 0; i <= this.grado; i++) {
+			potencias[i] = potenciaRec(x, this.grado - i);
+			resultado += potencias[i] * this.coeficientes[i];
 		}
-		resultadoFinal += coeficientes[grado];
-		return resultadoFinal;
+		
+		return resultado;
 	}
 
 	/**
@@ -99,12 +104,12 @@ public class Polinomio {
 	 * @return Valor del polinomio evaluado en x.
 	 */
 	double evaluarMejorada(double x) { // Complejidad computacional O(n)
-		double resultado = 0;
-		double[] potencias = new double[(int) this.grado + 1];
-		for (int i = 0; i <= this.grado; i++) {
-			potencias[i] = potenciaRec(x, this.grado - i);
-			resultado += potencias[i] * this.coeficientes[i];
+		double resultado = 0, potencia = 1;
+		for (int i = grado - 1; i >= 0; i--) {
+			potencia *= x;
+			resultado += potencia * coeficientes[i];
 		}
+		resultado += coeficientes[grado];
 		return resultado;
 	}
 
