@@ -26,7 +26,8 @@ public class BinomioDeNewton {
 	public double obtenerCoeficienteK(int k) { //O(1)
 		double x;
 		long ini = System.nanoTime();
-		x = factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) * Math.pow(this.a, this.grado - k)
+		x = factorial(this.grado) / (factorial(k) * factorial(this.grado - k)) 
+				* Math.pow(this.a, this.grado - k)
 				* Math.pow(this.b, k);
 		System.out.println("Obtener K: " + (System.nanoTime() - ini) + " ns");
 		return x;

@@ -36,7 +36,6 @@ class BinomioDeNewtonTest {
 
 	//@Test
 	void testCoeficientesSinPow() {
-
 		BinomioDeNewton binomio = new BinomioDeNewton(7, 2, 5);
 		double[] coeficientes = new double[] { 32, 560, 3920, 13720, 24010, 16807 };
 		Assert.assertArrayEquals(coeficientes, binomio.obtenerCoeficientesSinPow(), 0);
