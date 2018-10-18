@@ -9,6 +9,8 @@ public class Polinomio {
 	public Polinomio(int grado, double[] coeficientes) {
 		this.grado = grado;
 		this.coeficientes = coeficientes;
+		
+		//Comentario para commit
 	}
 
 	/**
